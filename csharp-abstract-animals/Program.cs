@@ -30,7 +30,26 @@
                 if (animale is INuotante nuotante) FaiNuotare(nuotante);
                 Console.WriteLine();
             }
-           
+
+            // Esempi con liste 
+            Console.WriteLine("Animali volanti");
+             List<IVolante> animaliVolante = new();
+            animaliVolante.Add(new Passerotto());
+            animaliVolante.Add(new Aquila());
+            foreach (IVolante animale in animaliVolante)
+            {
+                FaiVolare(animale);
+            }
+
+            Console.WriteLine("Animali nuotanti");
+            List<INuotante> animaleNuotante = new();
+            animaleNuotante.Add(new Cane());
+            animaleNuotante.Add(new Delfino());
+            foreach (INuotante animale in animaleNuotante)
+            {
+                FaiNuotare(animale);
+            }
+            Console.WriteLine();
 
             // Esempi singoli
             FaiNuotare(new Cane());
