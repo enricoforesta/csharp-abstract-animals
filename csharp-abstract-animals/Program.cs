@@ -2,23 +2,23 @@
 {
     internal class Program
     {
+        static List<Animale> animali = new();
+        static List<IVolante> animaliVolante = new();
+        static List<INuotante> animaleNuotante = new();
+        static void FaiVolare(IVolante animale)
+        {
+            animale.Vola();
+        }
+        static void FaiNuotare(INuotante animale)
+        {
+            animale.Nuota();
+        }
         static void Main(string[] args)
         {
-            List<Animale> animali = new();
             animali.Add(new Cane());
             animali.Add(new Passerotto());
             animali.Add(new Aquila());
             animali.Add(new Delfino());
-
-            void FaiVolare(IVolante animale)
-            {
-                animale.Vola();
-            }
-            void FaiNuotare(INuotante animale)
-            {
-                animale.Nuota();
-            }
-
 
             foreach (Animale animale in animali)
             {
@@ -32,8 +32,7 @@
             }
 
             // Esempi con liste 
-            Console.WriteLine("Animali volanti");
-             List<IVolante> animaliVolante = new();
+            Console.WriteLine("volanti");
             animaliVolante.Add(new Passerotto());
             animaliVolante.Add(new Aquila());
             foreach (IVolante animale in animaliVolante)
@@ -41,8 +40,7 @@
                 FaiVolare(animale);
             }
 
-            Console.WriteLine("Animali nuotanti");
-            List<INuotante> animaleNuotante = new();
+            Console.WriteLine("nuotanti");
             animaleNuotante.Add(new Cane());
             animaleNuotante.Add(new Delfino());
             foreach (INuotante animale in animaleNuotante)
